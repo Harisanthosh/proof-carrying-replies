@@ -19,6 +19,7 @@ import {
 } from "../src/pipeline.ts";
 import { factsOk, isFresh, type Candidate } from "../src/policy.ts";
 import { replay } from "../src/replay.ts";
+import { assertTeamsDemoHolds, runTeamsDemo } from "../src/teams-demo.ts";
 
 const freshSourced: Candidate = {
   postId: "1",
@@ -169,5 +170,30 @@ describe("replay of real 11–12 Nov posts", () => {
     assert.equal(row?.rejectedBy, "unsourced claim");
     assert.equal(isFresh(row ? { ...freshUnsourced } : freshUnsourced), true);
     assert.equal(factsOk(freshUnsourced), false);
+  });
+});
+
+describe("the same pipeline on a Teams channel message", () => {
+  it("posts a sourced Teams standup after a certificate and a confirm", () => {
+    const r = runTeamsDemo();
+    assertTeamsDemoHolds(r);
+    assert.equal(r.certified.phase, "posted");
+    assert.ok(r.certified.textHash);
+  });
+
+  it("refuses Publish on blanket autonomy, even in a Teams channel", () => {
+    const r = runTeamsDemo();
+    assert.equal(r.autonomy.refused, true);
+    assert.equal(r.autonomy.phase, "awaiting");
+    assert.equal(
+      r.autonomy.refuseReason,
+      "Publish requires an explicit confirm of this exact text",
+    );
+  });
+
+  it("stays silent when a Teams draft asserts an unsourced fact", () => {
+    const r = runTeamsDemo();
+    assert.equal(r.silence.phase, "facts_fail");
+    assert.equal(r.silence.textHash, null);
   });
 });

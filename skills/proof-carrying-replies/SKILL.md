@@ -1,11 +1,11 @@
 ---
 name: proof-carrying-replies
-description: Offer a public reply only with a machine-checked certificate and an explicit confirm of this exact text. Use before drafting, offering, or posting any public message on someone's behalf, and when deciding to stay silent.
+description: Offer a public reply or a team-channel message only with a machine-checked certificate and an explicit confirm of this exact text. Use before drafting, offering, or posting any privileged message on someone's behalf, and when deciding to stay silent.
 ---
 
 # Proof-carrying replies
 
-A public reply is a privileged action. Before you offer one, run it through the publish pipeline in this repository (`src/pipeline.ts`). Do not offer a draft that the pipeline would reject. Do not post without a confirm of this exact text. Standing autonomy is not a confirm.
+A public reply, or a message in a Slack or Teams channel that goes out under someone's name, is a privileged action. Before you offer one, run it through the publish pipeline in this repository (`src/pipeline.ts`). The channel does not change the invariants. Do not offer a draft that the pipeline would reject. Do not post without a confirm of this exact text. Standing autonomy is not a confirm. If the gates fail, stay silent: that is how you flag that you are blocked.
 
 ## Gates, in order
 

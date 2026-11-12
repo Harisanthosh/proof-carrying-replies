@@ -1,14 +1,29 @@
 # Proof-carrying replies
 
-A Grok Bot publish pipeline that cannot offer a public reply without a machine-checked certificate.
+A Grok Bot publish pipeline that cannot offer a privileged message — a public reply, or a post in a team channel — without a machine-checked certificate.
 
-The certificate is bound to exact reply text. A standing "full autonomy" permission cannot satisfy the confirm. Those two facts are invariants, not guidelines: they are checked with TLA+ and TLC, and drawn as a statechart.
+The certificate is bound to exact text. A standing "full autonomy" permission cannot satisfy the confirm. When the gates fail, the bot stays silent: that is how it flags that it is blocked. Those facts are invariants, not guidelines. They are checked with TLA+ and TLC, and drawn as a statechart.
 
-This is a recipe for **legitimate, slow, high-integrity public speech** by an agent that acts on someone's behalf. It is not a guide to engagement farming, and it is not a way to game a social network's ranking. Growth, if it comes, comes because each public act was curated, sourced, and explicitly consented to.
+This is a recipe for **legitimate, slow, high-integrity speech** by an agent that acts on someone's behalf. It is not a guide to engagement farming, and it is not a way to game a social network's ranking. Growth, if it comes, comes because each public act was curated, sourced, and explicitly consented to.
+
+## Two-minute demo
+
+1. The [proved pipeline](demo/01-proved-pipeline.png): a message reaches `posted` only through a certificate and a confirm. `GrantAutonomy` never enables `Publish`.
+2. The [old policy, caught](demo/02-old-policy-caught.png): a one-line variant that posts on blanket autonomy breaks in seven steps. The last step is: the bot posts on blanket autonomy.
+3. A [self-audit of real public replies](demo/03-replay.png): 5 of 7 actually offered replies would be rejected.
+4. The [same gate, on a Teams channel](demo/04-teams.png): the identical invariants decide a team-channel message — certified and posted, refused on autonomy, or silent when a claim is unsourced.
+
+```bash
+npm test          # 14 tests, including the three Teams beats
+npm run replay    # the self-audit
+npm run teams-demo
+```
+
+A teammate you cannot inspect is a teammate you cannot trust. The certificate is the opposite of a black box. Silence is how the bot flags that it is blocked.
 
 ## The use case
 
-A Grok Bot can draft, and eventually send, public messages. That is a privileged action, closer to a deploy than to a chat completion. The person who will be named on the post needs to know that:
+A Grok Bot can draft, and eventually send, messages that go out under someone's name: a public reply, or a post in a Slack or Teams channel. That is a privileged action, closer to a deploy than to a chat completion. The person who will be named on the message needs to know that:
 
 - the thread is still fresh enough to join without shouting over a conversation that has moved on
 - every factual claim is sourced and verified, or the reply is clearly opinion
@@ -29,7 +44,7 @@ A longer methodology, including what this deliberately leaves out, is in [docs/G
 | `PostedRequiresConfirm` | Posting requires an explicit confirm of this exact text. |
 | `AutonomyIsNotConfirm` | Blanket autonomy is not a confirm. |
 
-The real pipeline holds all of them, plus `TypeOK` and `NoDeadlock`. TLC reached 48 states and 94 steps.
+The real pipeline holds all of them, plus `TypeOK` and `NoDeadlock`. TLC reached 48 states and 94 steps. The formal model was not changed for the Teams walkthrough: a team-channel message is just another candidate, and it is accepted or refused by the same actions.
 
 A one-line old-policy variant — `PublishIfAutonomous`, which posts when autonomy is granted even if this text was never confirmed — breaks `PostedRequiresConfirm` and `AutonomyIsNotConfirm` in seven steps. The shortest path ends: **the bot posts on blanket autonomy.**
 
@@ -56,19 +71,21 @@ case                        then        now
 
 ## Demo images
 
-A three-panel walkthrough:
+A four-panel walkthrough:
 
 - [The proved pipeline](demo/01-proved-pipeline.png)
 - [The old policy, caught](demo/02-old-policy-caught.png)
 - [A self-audit of real public replies](demo/03-replay.png)
+- [The same gate, on a Teams channel](demo/04-teams.png)
 
 ## Run it
 
 ```bash
 node --test --experimental-strip-types test/pipeline.test.ts
 node --experimental-strip-types src/replay.ts
+node --experimental-strip-types src/teams-demo.ts
 ```
 
 To re-check the formal model, follow [`skills/verify-proof-carrying-replies/SKILL.md`](skills/verify-proof-carrying-replies/SKILL.md): work in a scratch folder outside this repository and run `/statechart` on `formal/ProofCarryingReply.tla`. Use `formal/ProofCarryingReplyBroken.cfg` to see the counterexample.
 
-The publishing skill a Grok Bot should load before offering a public reply is [`skills/proof-carrying-replies/SKILL.md`](skills/proof-carrying-replies/SKILL.md).
+The publishing skill a Grok Bot should load before offering a privileged message is [`skills/proof-carrying-replies/SKILL.md`](skills/proof-carrying-replies/SKILL.md).

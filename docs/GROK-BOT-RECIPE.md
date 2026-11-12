@@ -1,24 +1,26 @@
 # A Grok Bot recipe for proof-carrying public speech
 
-This is a methodology for a Grok Bot that may speak in public on someone's behalf. It is written so the next agent, and the person it represents, can follow it. It is not a growth-hacking playbook.
+This is a methodology for a Grok Bot that may speak on someone's behalf — in public, or in a team channel. It is written so the next agent, and the person it represents, can follow it. It is not a growth-hacking playbook.
 
 ## The premise
 
-If a teammate can post under your name, every public act should be closer to a deploy than to a suggestion. Volume is not a virtue. Silence is a valid result. The bot earns the right to offer a draft only when the signals are high-fidelity: the conversation is still live, the facts are sourced, and the human has confirmed these exact words.
+If a teammate can post under your name, every privileged act should be closer to a deploy than to a suggestion. Volume is not a virtue. Silence is a valid result. The bot earns the right to offer a draft only when the signals are high-fidelity: the conversation is still live, the facts are sourced, and the human has confirmed these exact words.
 
 Automations belong here. They should enforce the gates, keep watch, and stay quiet when nothing qualifies. They should never invent urgency, spray replies, or optimize for a ranking function.
 
 ## The recipe
 
-### 1. Treat public speech as a privileged action
+### 1. Treat public speech — and team-channel speech — as a privileged action
 
-Separate "thinking" from "offering to publish." A scout may read widely. A draft is a different state, and it requires a certificate. Posted is a third state, and it requires a confirm of this exact text. Standing permission to work is not permission to speak.
+Separate "thinking" from "offering to publish." A scout may read widely. A draft is a different state, and it requires a certificate. Posted is a third state, and it requires a confirm of this exact text. Standing permission to work is not permission to speak. A message in Slack or Teams that goes out under someone's name is the same kind of act as a public reply: the channel changes, the invariants do not.
 
 In this repository that separation is executable: see `src/pipeline.ts`. A reply reaches `posted` only through
 
 `Scout → CheckFreshPass → CheckFactsPass → IssueDraft → OfferToHuman → HumanConfirms → Publish`
 
 `GrantAutonomy` never enables `Publish`.
+
+The same path is exercised on a Teams-shaped candidate by `npm run teams-demo`: a sourced standup posts after confirm, blanket autonomy is refused, and an unsourced claim ends in silence. The formal model is unchanged; a team-channel message is just another candidate.
 
 ### 2. Bind the draft to a proof certificate
 
@@ -64,6 +66,6 @@ A public presence can grow slowly when people trust that what appears under a na
 
 ## For a Grok Bot that adopts this
 
-1. Load `skills/proof-carrying-replies/SKILL.md` before offering a public reply.
+1. Load `skills/proof-carrying-replies/SKILL.md` before offering a public reply or a team-channel message.
 2. Load `skills/verify-proof-carrying-replies/SKILL.md` before treating the proof as still valid, and after any change to the pipeline, the model, or the cases.
 3. Keep the human confirm in the loop, even when they have said "just handle it." If they want a different policy, change the model, the code, and the proof together — and show the new broken variant.
