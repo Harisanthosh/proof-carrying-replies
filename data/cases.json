@@ -12,7 +12,7 @@
     },
     "draftText": "Posted reply, already public.",
     "actuallyOfferedOrPosted": true,
-    "note": "Posted 97 minutes late into 121 replies. 56 impressions, 0 likes."
+    "note": "Posted 97 minutes late into a thread that already had 121 replies. The proved freshness gate would have held this back."
   },
   {
     "id": "jimfan-2026-11-11",
@@ -27,7 +27,7 @@
     },
     "draftText": "Posted reply, already public.",
     "actuallyOfferedOrPosted": true,
-    "note": "Posted ~26 hours late. 7 impressions."
+    "note": "Posted about 26 hours late. The proved freshness gate would have held this back."
   },
   {
     "id": "robbyant-2026-11-11",
@@ -42,7 +42,7 @@
     },
     "draftText": "Posted reply, already public.",
     "actuallyOfferedOrPosted": true,
-    "note": "Posted ~47 hours late. 6 impressions, 1 like."
+    "note": "Posted about 47 hours late. The proved freshness gate would have held this back."
   },
   {
     "id": "normandi-2026-11-11",
@@ -57,7 +57,7 @@
     },
     "draftText": "Posted reply, already public.",
     "actuallyOfferedOrPosted": true,
-    "note": "Posted ~27 hours late, already 40 replies. 7 impressions."
+    "note": "Posted about 27 hours late into a thread that already had 40 replies. The proved freshness gate would have held this back."
   },
   {
     "id": "ahmad-2026-11-12",
@@ -72,7 +72,7 @@
     },
     "draftText": "Open source AI doesn't lose in a press cycle. It loses when the next frontier model ships as a demo with no weights and no data.",
     "actuallyOfferedOrPosted": true,
-    "note": "Offered at 40 minutes — 10 minutes past the proved gate. Mid-size account, 11 replies."
+    "note": "Offered at 40 minutes \u2014 ten minutes past the proved 30-minute gate. An honest miss of a rule we had already agreed on."
   },
   {
     "id": "aakash-2026-11-12",
@@ -93,7 +93,7 @@
     },
     "draftText": "Review-bombing a studio for disclosing under 0.1% is punishing the evidence. Ten heavily modified lines that fixed a real Unity bug is a better case for AI than a generated game.",
     "actuallyOfferedOrPosted": true,
-    "note": "Still fresh, claim sourced from Dexerto. This is the path the policy allows."
+    "note": "Still fresh; the factual claim is sourced from a Dexerto post. This is the path the policy allows, and only after a confirm."
   },
   {
     "id": "theo-2026-11-12",
@@ -108,7 +108,7 @@
     },
     "draftText": "People aren't leaving macOS for a feature list. They're leaving because the agent can actually run the machine. Once that loop isn't fighting the OS, the editor is just a detail.",
     "actuallyOfferedOrPosted": true,
-    "note": "On the freshness boundary: 30 minutes, 21 replies, opinion only. Allowed."
+    "note": "On the freshness boundary: 30 minutes, 21 replies, opinion only. Allowed, and only after a confirm."
   },
   {
     "id": "invented-claim",
