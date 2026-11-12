@@ -1,0 +1,12 @@
+{
+  "name": "proof-carrying-replies",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A Grok Bot publish pipeline that cannot offer a public reply without a machine-checked certificate.",
+  "scripts": {
+    "test": "node --test --experimental-strip-types test/pipeline.test.ts",
+    "replay": "node --experimental-strip-types src/replay.ts",
+    "demo": "node --experimental-strip-types src/replay.ts"
+  }
+}

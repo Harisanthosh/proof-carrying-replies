@@ -1,0 +1,4 @@
+node_modules/
+*.flat.svg
+*.flat.png
+.DS_Store

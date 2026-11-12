@@ -1,0 +1,134 @@
+[
+  {
+    "id": "arav-2026-11-11",
+    "label": "@AravSrinivas 11 Nov",
+    "when": "2026-11-11T14:54:00Z",
+    "candidate": {
+      "postId": "2120506245131977026",
+      "author": "AravSrinivas",
+      "ageMinutes": 97,
+      "replyCount": 121,
+      "claims": []
+    },
+    "draftText": "Posted reply, already public.",
+    "actuallyOfferedOrPosted": true,
+    "note": "Posted 97 minutes late into 121 replies. 56 impressions, 0 likes."
+  },
+  {
+    "id": "jimfan-2026-11-11",
+    "label": "@DrJimFan 11 Nov",
+    "when": "2026-11-11T18:22:00Z",
+    "candidate": {
+      "postId": "2120186651741655428",
+      "author": "DrJimFan",
+      "ageMinutes": 1575,
+      "replyCount": 139,
+      "claims": []
+    },
+    "draftText": "Posted reply, already public.",
+    "actuallyOfferedOrPosted": true,
+    "note": "Posted ~26 hours late. 7 impressions."
+  },
+  {
+    "id": "robbyant-2026-11-11",
+    "label": "@robbyant_brain 11 Nov",
+    "when": "2026-11-11T18:22:00Z",
+    "candidate": {
+      "postId": "2119870554056651004",
+      "author": "robbyant_brain",
+      "ageMinutes": 2831,
+      "replyCount": 81,
+      "claims": []
+    },
+    "draftText": "Posted reply, already public.",
+    "actuallyOfferedOrPosted": true,
+    "note": "Posted ~47 hours late. 6 impressions, 1 like."
+  },
+  {
+    "id": "normandi-2026-11-11",
+    "label": "@normandipalo 11 Nov",
+    "when": "2026-11-11T18:23:00Z",
+    "candidate": {
+      "postId": "2120173936323244325",
+      "author": "normandipalo",
+      "ageMinutes": 1626,
+      "replyCount": 40,
+      "claims": []
+    },
+    "draftText": "Posted reply, already public.",
+    "actuallyOfferedOrPosted": true,
+    "note": "Posted ~27 hours late, already 40 replies. 7 impressions."
+  },
+  {
+    "id": "ahmad-2026-11-12",
+    "label": "@TheAhmadOsman 12 Nov",
+    "when": "2026-11-12T05:55:00Z",
+    "candidate": {
+      "postId": "2120747163252891695",
+      "author": "TheAhmadOsman",
+      "ageMinutes": 40,
+      "replyCount": 11,
+      "claims": []
+    },
+    "draftText": "Open source AI doesn't lose in a press cycle. It loses when the next frontier model ships as a demo with no weights and no data.",
+    "actuallyOfferedOrPosted": true,
+    "note": "Offered at 40 minutes — 10 minutes past the proved gate. Mid-size account, 11 replies."
+  },
+  {
+    "id": "aakash-2026-11-12",
+    "label": "@aakashgupta 12 Nov",
+    "when": "2026-11-12T06:55:00Z",
+    "candidate": {
+      "postId": "2120754715717959753",
+      "author": "aakashgupta",
+      "ageMinutes": 10,
+      "replyCount": 1,
+      "claims": [
+        {
+          "text": "The disclosed AI use was under 0.1%, about ten heavily modified lines that fixed a Unity bug.",
+          "source": "https://x.com/Dexerto/status/2120607577813705142",
+          "verified": true
+        }
+      ]
+    },
+    "draftText": "Review-bombing a studio for disclosing under 0.1% is punishing the evidence. Ten heavily modified lines that fixed a real Unity bug is a better case for AI than a generated game.",
+    "actuallyOfferedOrPosted": true,
+    "note": "Still fresh, claim sourced from Dexerto. This is the path the policy allows."
+  },
+  {
+    "id": "theo-2026-11-12",
+    "label": "@theo 12 Nov",
+    "when": "2026-11-12T06:55:00Z",
+    "candidate": {
+      "postId": "2120749915794219098",
+      "author": "theo",
+      "ageMinutes": 30,
+      "replyCount": 21,
+      "claims": []
+    },
+    "draftText": "People aren't leaving macOS for a feature list. They're leaving because the agent can actually run the machine. Once that loop isn't fighting the OS, the editor is just a detail.",
+    "actuallyOfferedOrPosted": true,
+    "note": "On the freshness boundary: 30 minutes, 21 replies, opinion only. Allowed."
+  },
+  {
+    "id": "invented-claim",
+    "label": "Unsourced claim (scratch)",
+    "when": "2026-11-12T00:00:00Z",
+    "candidate": {
+      "postId": "0",
+      "author": "example",
+      "ageMinutes": 8,
+      "replyCount": 2,
+      "claims": [
+        {
+          "text": "Unity engineers said this was impossible.",
+          "source": null,
+          "verified": false
+        }
+      ]
+    },
+    "draftText": "Unity engineers said this was impossible.",
+    "actuallyOfferedOrPosted": false,
+    "note": "Fresh thread, but the claim was commentary, not a sourced fact. Correctly held back."
+  }
+]
